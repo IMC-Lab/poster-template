@@ -1,0 +1,71 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{IMCLab}[2021/10/27 IMC Lab Poster Template]
+
+%% turn off tikzposter logo on bottom
+\tikzposterlatexaffectionproofoff
+
+%% set up graphics path
+\RequirePackage{graphicx}
+\graphicspath{{./img/}}
+
+%% set up font
+\RequirePackage[default, medium]{raleway}
+\renewcommand{\familydefault}{\sfdefault}
+
+%% define color palette
+\definecolorstyle{IMCLabColors} {
+     \definecolor{colorOne}{RGB}{112, 118, 136}
+     \definecolor{colorTwo}{named}{white}
+     \definecolor{colorThree}{RGB}{175,209,218}
+ }{ % Background Colors
+     \colorlet{backgroundcolor}{colorThree}
+     \colorlet{framecolor}{colorOne}
+     % Title Colors
+     \colorlet{titlefgcolor}{colorOne}
+     \colorlet{titlebgcolor}{colorTwo}
+     % Block Colors
+     \colorlet{blocktitlebgcolor}{colorOne}
+     \colorlet{blocktitlefgcolor}{colorTwo}
+     \colorlet{blockbodybgcolor}{colorOne}
+     \colorlet{blockbodyfgcolor}{colorTwo}
+     % Innerblock Colors
+     \colorlet{innerblocktitlebgcolor}{colorOne}
+     \colorlet{innerblocktitlefgcolor}{colorOne}
+     \colorlet{innerblockbodybgcolor}{colorOne}
+     \colorlet{innerblockbodyfgcolor}{colorOne}
+     % Note colors
+     \colorlet{notefgcolor}{colorOne}
+     \colorlet{notebgcolor}{colorOne}
+     \colorlet{noteframecolor}{colorOne}
+}
+
+%% define title layout
+\definetitlestyle{IMCLabTitle}{
+    width=\paperwidth, roundedcorners=0, linewidth=0pt, innersep=1.5cm,
+    titletotopverticalspace=0mm, titletoblockverticalspace=20mm,
+    titlegraphictotitledistance=10pt
+}{
+   \draw[draw=none, fill=titlebgcolor]
+   (\titleposleft,\titleposbottom) rectangle (\titleposright,\titlepostop);
+   %%
+   %% add IMC lab logo and Duke logo
+   \node[xshift=7.5cm] at (TP@title.west) {\includegraphics[width=10cm]{imc_lab_logo.png}};
+   \node[xshift=-7.5cm] at (TP@title.east) {\includegraphics[width=10cm]{duke_wordmark_navyblue_012169.eps}};
+}
+
+%% choose layout theme
+\definelayouttheme{IMCLab}{
+     \usecolorstyle{IMCLabColors}
+     \usebackgroundstyle{Default} % Default, Rays, VerticalGradation, BottomVerticalGradation, Empty
+     \usetitlestyle{IMCLabTitle} % Default, Basic, Envelope, Wave, VerticalShading, Filled, Empty
+     \useblockstyle[roundedcorners=1]{Default} % Default, Basic, Minimal, Envelope, Corner, Slide, TornOut
+     \useinnerblockstyle{Default} % Default, Table
+     \usenotestyle{Default} % Default, Corner, VerticalShading, Sticky
+}
+\usetheme{IMCLab}
+
+
+\ExecuteOptions{futura}
+\ProcessOptions\relax
+
+\endinput

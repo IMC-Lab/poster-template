@@ -1,0 +1,46 @@
+\documentclass[25pt, a0paper, landscape, margin=0mm, innermargin=15mm, blockverticalspace=15mm, colspace=15mm, subcolspace=8mm]{tikzposter}
+
+\usepackage{IMCLab}                                 %% for pretty fonts/colors
+\usepackage[style=apa,backend=biber]{biblatex}      %% for APA citation
+\usepackage{blindtext}                              %% for filler text- delete this line
+
+\addbibresource{references.bib}                         %% import bibliography file
+
+
+\begin{document}
+\title{Poster Title}
+\author{Author One, Author Two, Felipe De Brigard}
+\date{\today}
+\institute{Duke University}
+\maketitle
+
+\begin{columns}
+    \column{0.4}
+    \block{Background}{
+        \textcite{gessell2021} showed that \blindtext
+    }
+    \block{Methods}{
+        We used a new method for testing this hypothesis \cite{oneill2021}. \blindtext
+    }
+    \block{References}{
+        \begin{center}\mbox{}\vspace{-\baselineskip}
+            \printbibliography[heading=none]
+        \end{center}
+    }
+    
+    \column{0.6}
+    \block{Main Result \#1}{Similar to \textcite{huang2021}, we found that \blindtext}
+    \block{Main Result \#2}{
+        Look at our wonderful PI, isn't he the best?
+        
+        \centering{\includegraphics[trim={5cm 12.5cm 5cm 2.5cm},clip,scale=2]{felipe.jpg}}
+    }
+    \block{Main Result \#3}{ \blindtext }
+    \block{Conclusions}{
+        \blindtext
+    }
+    
+    
+\end{columns}
+
+\end{document}
