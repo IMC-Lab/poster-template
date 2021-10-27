@@ -14,29 +14,29 @@
 
 %% define color palette
 \definecolorstyle{IMCLabColors} {
-     \definecolor{colorOne}{RGB}{112, 118, 136}
-     \definecolor{colorTwo}{named}{white}
-     \definecolor{colorThree}{RGB}{175,209,218}
+     \definecolor{IMCdark}{RGB}{112, 118, 136}
+     \definecolor{IMClight}{RGB}{175, 209, 218}
+     \definecolor{DukeBlue}{RGB}{1, 33, 105}
  }{ % Background Colors
-     \colorlet{backgroundcolor}{colorThree}
-     \colorlet{framecolor}{colorOne}
+     \colorlet{backgroundcolor}{IMClight}
+     \colorlet{framecolor}{IMCdark}
      % Title Colors
-     \colorlet{titlefgcolor}{colorOne}
-     \colorlet{titlebgcolor}{colorTwo}
+     \colorlet{titlefgcolor}{DukeBlue}
+     \colorlet{titlebgcolor}{white}
      % Block Colors
-     \colorlet{blocktitlebgcolor}{colorOne}
-     \colorlet{blocktitlefgcolor}{colorTwo}
-     \colorlet{blockbodybgcolor}{colorOne}
-     \colorlet{blockbodyfgcolor}{colorTwo}
+     \colorlet{blocktitlebgcolor}{IMCdark}
+     \colorlet{blocktitlefgcolor}{white}
+     \colorlet{blockbodybgcolor}{IMCdark}
+     \colorlet{blockbodyfgcolor}{white}
      % Innerblock Colors
-     \colorlet{innerblocktitlebgcolor}{colorOne}
-     \colorlet{innerblocktitlefgcolor}{colorOne}
-     \colorlet{innerblockbodybgcolor}{colorOne}
-     \colorlet{innerblockbodyfgcolor}{colorOne}
+     \colorlet{innerblocktitlebgcolor}{IMCdark}
+     \colorlet{innerblocktitlefgcolor}{IMCdark}
+     \colorlet{innerblockbodybgcolor}{IMCdark}
+     \colorlet{innerblockbodyfgcolor}{IMCdark}
      % Note colors
-     \colorlet{notefgcolor}{colorOne}
-     \colorlet{notebgcolor}{colorOne}
-     \colorlet{noteframecolor}{colorOne}
+     \colorlet{notefgcolor}{IMCdark}
+     \colorlet{notebgcolor}{IMCdark}
+     \colorlet{noteframecolor}{IMCdark}
 }
 
 %% define title layout
@@ -49,8 +49,8 @@
    (\titleposleft,\titleposbottom) rectangle (\titleposright,\titlepostop);
    %%
    %% add IMC lab logo and Duke logo
-   \node[xshift=7.5cm] at (TP@title.west) {\includegraphics[width=10cm]{imc_lab_logo.png}};
-   \node[xshift=-7.5cm] at (TP@title.east) {\includegraphics[width=10cm]{duke_wordmark_navyblue_012169.eps}};
+   \node[xshift=7.5cm] at (TP@title.west) {\includegraphics[width=10cm]{duke_wordmark_navyblue_012169.eps}};
+   \node[xshift=-7.5cm] at (TP@title.east) {\includegraphics[width=10cm]{imc_lab_logo.png}};
 }
 
 %% choose layout theme
